@@ -382,7 +382,7 @@ input[type=submit]:hover {
   padding-bottom: 2%;
   background-color: #EDE8DE;
   display: grid;
-  grid-template-rows: [footer-top] 50% [footer-bottom] 50%;
+  grid-template-rows: [footer-top] 60% [footer-bottom] 40%;
   grid-template-areas: 'footer-top' 'footer-bottom';
 }
 
