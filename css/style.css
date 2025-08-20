@@ -225,7 +225,14 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
 /* *******************************Formgivning av informationssektionen******************************* */
 .about {
   grid-area: about;
-  padding: 30px 100px;
+  background-color: #15634C;
+  color: #FAF8F4;
+  padding-top: 5%;
+}
+.about-text {
+  margin: 8%;
+  margin-top: 0%;
+  color: #FAF8F4;
 }
 /* Formatering av färgade rutor för placering av text eller andra element */
 .colourbox{
@@ -247,19 +254,18 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
 }
 /* Formatering av rutnät för produktlistning */
 .listings {
-  width: 90%;
   display: grid;
-  background-color: white;
-  grid-template-columns: 33% 33% 33%;
-  gap: 0.5%;
-  padding: 1%;
-  margin: 20px auto;
-  border-radius: 10px;
+  grid-template-columns: 29% 29% 29%;
+  gap: 5%;
   align-items: center;
 }
 /* Formatering för listade produkter */
 .listed-item{
-  margin-top: 3%;
+  background-color: white;
+  border-radius: 10px;
+  border-style: double;
+  border-color: #EDE8DE;
+  padding: 10%;
 }
 /* Formgivning av bildernas sektioner i portfolion */
 .image-box {
