@@ -154,7 +154,7 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   color: var(--light1-color);
   align-items: center; /* Centrerar innehålet vertikalt */
   justify-content: center; /* Centrerar innehålet horisontellt */
-  padding-left: 5%;
+  padding-left: 8%;
   color: var(--light1-color);
 }
 
@@ -238,14 +238,29 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
 /* *******************************Formgivning av informationssektionen******************************* */
 .about {
   grid-area: about;
-  background-color: var(--dark-primary-color);
-  color: var(--light2-color);
+  background-color: var(--light2-color);
+  color: var(--dark2-color);
   padding-top: 5%;
+  display: grid;
+  grid-template-columns: [about-img-frame] 50% [about-text] 50%;
+}
+.about-img-frame {
+  margin: 5% 8% 5% 16%;
+  background-color: var(--light1-color);
+  align-content: center;
+  border-radius: 10%;
+  border-color: var(--light3-color);
+  border-style: double;
+}
+.about-img {
+  width: 90%;
+  display: block;
+  justify-self: center;
 }
 .about-text {
-  margin: 8%;
+  margin: 5% 16% 5% 8%;
   margin-top: 0%;
-  color: var(--light2-color);
+  color: var(--dark2-color);
 }
 /* Formatering av färgade rutor för placering av text eller andra element */
 .colourbox{
@@ -258,12 +273,12 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
 /* *******************************Formgivning av portfoliosektionen, där bilder senare placeras******************************* */
 .portfolio {
   grid-area: portf;
-  background-color: var(--light2-color);
-  color: var(--dark1-color);
+  background-color: var(--dark1-color);
+  color: var(--light1-color);
 }
 .portfolio-text {
   padding: 8%; /* Anger samma padding som i informationssektionen */
-  color: var(--dark2-color);
+  color: var(--light1-color);
 }
 /* Formatering av rutnät för produktlistning */
 .listings {
@@ -274,11 +289,19 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
 }
 /* Formatering för listade produkter */
 .listed-item{
-  background-color: var(--light1-color);
+  background-color: var(--dark2-color);
   border-radius: 10px;
   border-style: double;
-  border-color: var(--light3-color);
+  border-color: var(--dark3-color);
   padding: 10%;
+  justify-items: center;
+  text-align: center;
+}
+.listed-item > h1 {
+  font-size: 1.3em;
+}
+.listed-item > p {
+  color: var(--light2-color);
 }
 /* Formgivning av bildernas sektioner i portfolion */
 .image-box {
