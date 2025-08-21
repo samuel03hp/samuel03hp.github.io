@@ -242,10 +242,10 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   color: var(--dark2-color);
   padding-top: 5%;
   display: grid;
-  grid-template-columns: [about-img-frame] 50% [about-text] 50%;
+  grid-template-columns: 50% 50%;
 }
 .about-img-frame {
-  margin: 5% 8% 5% 16%;
+  margin: 5% 16% 5% 16%;
   background-color: var(--light1-color);
   align-content: center;
   border-radius: 10%;
@@ -258,10 +258,21 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   justify-self: center;
 }
 .about-text {
-  margin: 5% 16% 5% 8%;
+  margin: 5% 16% 5% 16%;
   margin-top: 0%;
   color: var(--dark2-color);
 }
+#about2, #about2 > .about-text {
+  background-color: var(--dark-primary-color);
+  color: var(--light2-color);
+}
+#about3, #about3 > .about-text {
+  grid-template-columns: 100%;
+  background-color: var(--dark-primary-color);
+  color: var(--light2-color);
+  text-align: center;
+}
+
 /* Formatering av färgade rutor för placering av text eller andra element */
 .colourbox{
   background-color: #B69F84;
