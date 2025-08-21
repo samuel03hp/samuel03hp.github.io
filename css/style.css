@@ -268,10 +268,29 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
 }
 #about3, #about3 > .about-text {
   grid-template-columns: 100%;
+  grid-template-rows: 80% 20%;
   background-color: var(--dark-primary-color);
   color: var(--light2-color);
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  display: grid;
 }
+
+.icons {
+  display: flex;
+  justify-self: center;
+}
+
+.contact-image{
+  margin-top: 10%;
+  border-radius: 50%;
+  width: 40%;
+  border-style: solid;
+  border-width: 8px;
+  border-color: var(--light2-color);
+}
+
 
 /* Formatering av färgade rutor för placering av text eller andra element */
 .colourbox{
