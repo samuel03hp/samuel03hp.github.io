@@ -247,7 +247,6 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   grid-template-columns: 50% 50%;
 }
 .about-img-frame {
-  margin: 5% 16% 5% 16%;
   background-color: var(--light1-color);
   align-content: center;
   border-radius: 10%;
@@ -258,16 +257,34 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   width: 90%;
   display: block;
   justify-self: center;
+  border-radius: 10%;
 }
 .about-text {
-  margin: 5% 16% 5% 16%;
   margin-top: 0%;
   color: var(--dark2-color);
 }
+
+#about-left {
+  margin: 8% 8% 8% 16%;
+}
+#about-right {
+  margin: 8% 16% 8% 8%;
+}
+#about-middle {
+  margin: 8%;
+}
+
 #about2, #about2 > .about-text {
   background-color: var(--dark-primary-color);
   color: var(--light2-color);
 }
+#about2 > .about-img-frame {
+  margin: 8% 16% 8% 8%;
+}
+#about2 > .about-text {
+  margin: 8% 8% 8% 16%;
+}
+
 #about3, #about3 > .about-text {
   grid-template-columns: 100%;
   grid-template-rows: 80% 20%;
@@ -279,7 +296,7 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   display: grid;
 }
 
-#about3 > .about-text > h1 {
+#about3 > .about-text > #contact-name {
   margin-top: -4%;
   margin-bottom: -2%;
 }
