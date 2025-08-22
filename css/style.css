@@ -24,17 +24,21 @@ påverkas av formattering på olika ställen i koden, som skrivits vid olika til
 
 /* Anpassade nedladdade fonter */
 @font-face {
-  font-family: Regular;
-  src: url(../fonts/LibreBaskerville-Regular.ttf);
+  font-family: Body;
+  src: url(../fonts/Lato/Lato-Regular.ttf);
 }
 @font-face {
-  font-family: Dancing;
-  src: url(../fonts/DancingScript-VariableFont_wght.ttf);
+  font-family: Head;
+  src: url(../fonts/Raleway/static/Raleway-SemiBold.ttf);
+}
+@font-face {
+  font-family: Hero-Head;
+  src: url(../fonts/Raleway/static/Raleway-Bold.ttf);
 }
 /* Grundläggande formgivning som används om klassen inte själv modifierar något */
 body {
   background-color: var(--light2-color); /* Anger standardfärgen för bakgrunder på hemsidan */
-  font-family: 'Regular', sans-serif; /* Anger standardfont, med alternativ font om den valda inte stöds */
+  font-family: "Body"; /* Anger standardfont, med alternativ font om den valda inte stöds */
   font-size: 20px; /* Anger standardstorlek på font */
   color: var(--dark1-color);
   line-height: 150%; /* Anger standardavstånd mellan textrader */
@@ -44,6 +48,7 @@ body {
 /* Formgivning för rubriker */
 h1, h2, h3, h4, h5 {
   line-height: 150%; /* Anger avstånd mellan textrader */
+  font-family: "Head";
 }
 h1 {
   font-size: 1.5em; /* Anger storleken på texten */
@@ -60,12 +65,9 @@ h4 {
 h5 {
   font-size: 0.75em;
 }
-p {
-  color: var(--dark2-color);
-}
 /* Formgivning av heroklassen, som alltså är speciell text */
 .hero{
-  font-family: "Dancing", cursive; /* Anger font för klassen hero */
+  font-family: "Hero-Head"; /* Anger font för klassen hero */
   font-size: 64px;
   line-height: 120%;
 }
@@ -277,13 +279,30 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   display: grid;
 }
 
-.icons {
-  display: flex;
-  justify-self: center;
+#about3 > .about-text > h1 {
+  margin-top: -4%;
+  margin-bottom: -2%;
 }
 
+.icons {
+  display: grid;
+  grid-template-columns: [media-icon] 33% [media-icon] 33% [media-icon] 33%;
+  justify-self: center;
+  width: 80%;
+  color: var(--light2-color);
+}
+
+.media-icon {
+  justify-self: center;
+  display: block;
+}
+.media-icon > p {
+  margin-top: 0%;
+}
+
+
 .contact-image{
-  margin-top: 10%;
+  margin-top: 3%;
   border-radius: 50%;
   width: 40%;
   border-style: solid;
