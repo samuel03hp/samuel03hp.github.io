@@ -150,8 +150,8 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
 .header {
   grid-area: header; /* Anger att elementet befinner sig i header-området*/
   display: grid;
-  grid-template-columns: [name] 50% [nav] 50%;
-  grid-template-areas: 'name nav';
+  grid-template-columns: [header-logo] 13% [name] 37% [nav] 40% [lang] 10%;
+  grid-template-areas: 'header-logo name nav lang';
   background-color: var(--dark1-color);
   color: var(--light1-color);
   align-items: center; /* Centrerar innehålet vertikalt */
@@ -164,6 +164,11 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   font-size: 0.8em;
   margin-top: -4%;
   color: var(--light2-color);
+}
+.header-logo > img {
+  width: 100%;
+  display: flex;
+  padding: 10%;
 }
 
 /* Formatering av navigationsmenyn i sidhuvudet */
@@ -196,6 +201,51 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   background-color: var(--primary-color); /* Ändrar bakgrundsfärgen vid hovring */
   opacity: 1; /* Anger att knappens synlighet är 100% vid hovring */
 }
+
+.dropbtn {
+  background-color: transparent;
+  font-family: 'Regular', sans-serif;
+  font-size: 0.7em;
+  text-align: center; /* Anger att texten ska vara centrerad */
+  border: none; /* Anger att knappar inte ska ha någon kant */
+  width: 80px; /* Anger knappars bredd */
+  padding: 7px 0px; /* Anger avstånd inom knappen (första värdet gäller över och under, det andra gäller höger och vänster*/
+  margin: 10px 0px; /* Anger avständ från knappen till övriga element */
+  position: relative; /* Anger att knappen ska vara positionerad relativt sin normala position */
+  cursor: pointer; /* Ändrar muspekaren till en pekare vid hovring */
+  transition-duration: 0.3s; /* Anger längden på övergångseffekten */
+  display: block; /* Anger att knappen ska visas som ett blockelement */
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--light1-color);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  margin-top: -10px;
+}
+
+.dropdown-content a {
+  color: var(--dark1-color);
+  padding: 7px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.7em;
+}
+
+.dropdown-content a:hover {background-color: var(--light2-color);}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: var(--primary-color)}
+
 /* *******************************Formatering välkomstsektionen, med bild som bakgrund******************************* */
 .middle {
   grid-area: middle;
@@ -303,7 +353,7 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
 
 .icons {
   display: grid;
-  grid-template-columns: [media-icon] 33% [media-icon] 33% [media-icon] 33%;
+  grid-template-columns: [media-icon] 25% [media-icon] 25% [media-icon] 25% [media-icon] 25%;
   justify-self: center;
   width: 80%;
   color: var(--light2-color);
