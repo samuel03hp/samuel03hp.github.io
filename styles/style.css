@@ -150,7 +150,8 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
 .header {
   grid-area: header; /* Anger att elementet befinner sig i header-området*/
   display: grid;
-  grid-template-columns: [header-logo] 13% [name] 37% [nav] 40% [lang] 10%;
+  /* grid-template-columns: [header-logo] 10% [name] 40% [nav] 40% [lang] 10%; */
+  grid-template-columns: [header-logo] 10% [name] 40% [nav] 50%;
   grid-template-areas: 'header-logo name nav lang';
   background-color: var(--dark1-color);
   color: var(--light1-color);
@@ -168,14 +169,14 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
 .header-logo > a > img {
   width: 100%;
   display: flex;
-  padding: 0%;
+  padding: 10% 10% 10% 0%;
 }
 
 /* Formatering av navigationsmenyn i sidhuvudet */
 .nav {
   grid-column: nav; /* Anger att elementet befinner sig i nav-området som definierades i header*/
   justify-self: right; /* Justerar navigationen till höger */
-  margin-right: 5%; /* Anger höger marginal */
+  margin-right: 10%; /* Anger höger marginal */
   display: flex;
   color: var(--light2-color);
 }
@@ -250,7 +251,7 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
 .middle {
   grid-area: middle;
   /* TO DO: Fix quality of image */
-  background: url("../img/landscape.jpg") no-repeat center center; /* Anger bakgrundsbild och dess position */
+  background: url("../img/corks.jpg") no-repeat center center; /* Anger bakgrundsbild och dess position */
   background-size: cover; /* Skalar bakgrundsbilden så att den täcker hela området */
   text-align: center; /* Centrerar text horisontellt */
 }
@@ -259,7 +260,7 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   background: rgba(71, 107, 97, 0.7); /* Använder rgba för semi-transparent bakgrund */
   color: var(--light1-color);
   text-align: left;
-  padding: 8%;
+  padding: 3% 8% 3% 8%;
 }
 
 
