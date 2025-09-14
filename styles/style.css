@@ -305,7 +305,7 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   border-style: double;
 }
 .about-img {
-  width: 90%;
+  width: 70%;
   display: block;
   justify-self: center;
   border-radius: 10%;
@@ -541,7 +541,7 @@ input[type=submit]:hover {
   padding-bottom: 2%;
   background-color: var(--light3-color);
   display: grid;
-  grid-template-rows: [footer-top] 60% [footer-bottom] 40%;
+  grid-template-rows: [footer-top] 40% [footer-bottom] 60%;
   grid-template-areas: 'footer-top' 'footer-bottom';
 }
 
@@ -573,10 +573,12 @@ input[type=submit]:hover {
 
 /* Formgivning av logotypen i sidfoten */
 .footer-img{
-  position: relative;
-  width: 40%;
-  margin: 0 auto;
-  display: block;
+  /* position: relative; */
+  width: 80%;
+  align-content: center;
+  justify-content: center;
+  margin: 0 ;
+  /* display: block; */
 }
 /* Responsiv layout. Byter till följande då skärmen har en bredd på 600px eller mindre */
 @media (max-width: 600px) {
