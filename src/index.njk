@@ -1,0 +1,39 @@
+---
+permalink: "index.html"
+---
+
+<!DOCTYPE html>
+<html lang="en">
+   {% include "head.njk" %}
+   <body>
+      <div class="grid-container">
+         {% include "header.njk" %}
+         <main>
+            <section class="middle">
+               <div class="overlay1">
+                  <h1 class="hero">Welcome!</h1>
+                  <p id="intro">
+                     My name is Samuel Håkans Persson and I recently graduated from Karlstad 
+                     University as a computer engineer. Now I am searching for a fullfilling
+                     job where I can contribute with my creativity and drive, while continuing
+                     to grow as a person and developer.<br><br>
+                  </p>
+               </div>
+            </section>
+            <section id="about" class="about">
+               <div class="about-text" id="about-left">
+                  <h1>Discover!</h1>
+                  This website will serve as an introduction to who I am and what I'm looking for, 
+                  as well as a portfolio for both my technological and creative projects.
+                  <br><br>
+                  If you have any questions, don't hesitate to contact me!<br><br>
+               </div>
+               <picture class="about-img-frame" id="about-right">
+                  <img src="img/logo_interlock.png" class="about-img" alt="Logo">
+               </picture>
+            </section>
+         </main>
+         {% include "footer.njk" %}
+      </div>
+   </body>
+</html>
