@@ -6,34 +6,22 @@ permalink: "about.html"
 <html lang="en">
    {% include "head.njk" %}
    <body>
-      <!-- Huvudbehållare för sidans rutnätslayout -->
       <div class="grid-container">
-         <!-- Sidhuvud (header section), innehållande logotyp och navigationsmeny -->
          {% include "header.njk" %}
-         <!-- 
-            Huvudsektionen 1C8264 FAF8F4
-            Den del som skiljer webplatsens sidor åt
-         -->
         <main>
-            <!-- Sektion med välkomstmeddelande och bild som bakgrund -->
-            <!-- OBS! All text i main-sektionen är delvis skriven av AI (chat GPT) -->
             <section id="about" class="about">
                <picture class="about-img-frame" id="about-left">
                   <img src="img/cv_photo.jpg" class="about-img" alt="Logo featuring a cake alongside the company name: The Cake Corner">
                </picture>
                <div class="about-text" id="about-right">
                    <h1>About me</h1>
-                   <!-- Beskrivning av hur bilder och bildtexter kan visas -->
                    I am a curious and creative person who reacently graduated as 
                    a computer engineer from Karlstad University.
                    <br><br>
                    <a href="assets/CV2025.pdf" target="_blank">
                    Find out more about my skills and work experiance by clicking here!
                    </a>
-                   
                    <br><br>
-                   <!-- Länk till kontaktformulär -->
-                   <!-- <a href="contact.html" class="button shop-now contact-button">Contact</a> -->
                 </div>
             </section>
             <!--
@@ -136,7 +124,6 @@ permalink: "about.html"
                 </div>
             </section>
          </main>
-         <!-- Sidfotsektion -->
          {% include "footer.njk" %}
       </div>
    </body>

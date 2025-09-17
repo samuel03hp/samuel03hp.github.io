@@ -6,17 +6,9 @@ permalink: "projects.html"
 <html lang="en">
    {% include "head.njk" %}
    <body>
-      <!-- Huvudbehållare för sidans rutnätslayout -->
       <div class="grid-container">
-         <!-- Sidhuvud (header section), innehållande logotyp och navigationsmeny -->
         {% include "header.njk" %}
-         <!-- 
-            Huvudsektionen
-            Den del som skiljer webplatsens sidor åt
-         -->
          <main>
-            <!-- Sektion med välkomstmeddelande och bild som bakgrund -->
-            <!-- OBS! All text i main-sektionen är delvis skriven av AI (chat GPT) -->
             <section class="middle">
                <div class="overlay1">
                   <h1 class="hero">Projects</h1>
@@ -25,8 +17,6 @@ permalink: "projects.html"
                      Since I am both a computer engineer and am very interested 
                      in art and creativity, you will be able discover some of my 
                      latest projects related to both programming and arts.<br><br>
-                    <!-- Länk till webshopens produktlistningssida -->
-                    <!-- <a href="shop.html" class="button shop-now" >Shop now!</a> -->
                   </p>
                </div>
             </section>
@@ -36,12 +26,9 @@ permalink: "projects.html"
                </picture>
                <div class="about-text" id="about-right">
                    <h1>Graduation Project</h1>
-                   <!-- Beskrivning av hur bilder och bildtexter kan visas -->
                    My graduation project consisted of developing an application 
                    that utilizes AI to assist people when solving jigsaw puzzles.
                    <br><br>
-                   <!-- Länk till kontaktformulär -->
-                   <!-- <a href="contact.html" class="button shop-now contact-button">Contact</a> -->
                 </div>
             </section>
             <section id="portfolio" class="portfolio">
@@ -88,7 +75,6 @@ permalink: "projects.html"
                </div>
             </section>
          </main>
-         <!-- Sidfotsektion -->
         {% include "footer.njk" %}
       </div>
    </body>

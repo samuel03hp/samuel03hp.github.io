@@ -4,26 +4,17 @@ permalink: "contact.html"
 
 <!DOCTYPE html>
 <html lang="en">
-   {% include "head.njk" %}
-   <body>
-      <!-- Huvudbehållare för sidans rutnätslayout -->
-      <div class="grid-container">
-         <!-- Sidhuvud (header section), innehållande logotyp och navigationsmeny -->
-         {% include "header.njk" %}
-         <!-- 
-            Huvudsektionen 1C8264 FAF8F4
-            Den del som skiljer webplatsens sidor åt
-         -->
+    {% include "head.njk" %}
+    <body>
+        <div class="grid-container">
+        {% include "header.njk" %}
         <main>
-            <!-- Sektion med välkomstmeddelande och bild som bakgrund -->
-            <!-- OBS! All text i main-sektionen är delvis skriven av AI (chat GPT) -->
             <section id="about3" class="about">
                <div class="about-text" id="about-middle">
                   <picture class="contact-image-frame">
                      <img src="img/cv_photo.jpg" class="contact-image" alt="Logo featuring a cake alongside the company name: The Cake Corner">
                   </picture>
                   <h1 id="contact-name">Samuel Håkans Persson</h1>
-                   <!-- Beskrivning av hur bilder och bildtexter kan visas -->
                   <div class="icons">
                      <a class="media-icon" href="http://www.linkedin.com/in/samuel-håkans-persson" target="_blank">
                         <svg id="linkedIn-contact" width="33.6" height="36" viewBox="0 0 188 188" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,7 +69,6 @@ permalink: "contact.html"
                 </div>
             </section>
          </main>
-         <!-- Sidfotsektion -->
          {% include "footer.njk" %}
       </div>
    </body>

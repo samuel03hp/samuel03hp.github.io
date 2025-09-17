@@ -6,17 +6,9 @@ permalink: "index.html"
 <html lang="en">
    {% include "head.njk" %}
    <body>
-      <!-- Huvudbehållare för sidans rutnätslayout -->
       <div class="grid-container">
-         <!-- Sidhuvud (header section), innehållande logotyp och navigationsmeny -->
          {% include "header.njk" %}
-         <!-- 
-            Huvudsektionen 1C8264 FAF8F4
-            Den del som skiljer webplatsens sidor åt
-         -->
          <main>
-            <!-- Sektion med välkomstmeddelande och bild som bakgrund -->
-            <!-- OBS! All text i main-sektionen är delvis skriven av AI (chat GPT) -->
             <section class="middle">
                <div class="overlay1">
                   <h1 class="hero">Welcome!</h1>
@@ -25,28 +17,22 @@ permalink: "index.html"
                      University as a computer engineer. Now I am searching for a fullfilling
                      job where I can contribute with my creativity and drive, while continuing
                      to grow as a person and developer.<br><br>
-                    <!-- Länk till webshopens produktlistningssida -->
-                    <!-- <a href="shop.html" class="button shop-now" >Shop now!</a> -->
                   </p>
                </div>
             </section>
             <section id="about" class="about">
                <div class="about-text" id="about-left">
                   <h1>Discover!</h1>
-                  <!-- Beskrivning av hur bilder och bildtexter kan visas -->
                   This website will serve as an introduction to who I am and what I'm looking for, 
                   as well as a portfolio for both my technological and creative projects.
                   <br><br>
                   If you have any questions, don't hesitate to contact me!<br><br>
-                  <!-- Länk till kontaktformulär -->
-                  <!-- <a href="contact.html" class="button shop-now contact-button">Contact</a> -->
                </div>
                <picture class="about-img-frame" id="about-right">
                   <img src="img/logo_interlock.png" class="about-img" alt="Logo">
                </picture>
             </section>
          </main>
-         <!-- Sidfotsektion -->
          {% include "footer.njk" %}
       </div>
    </body>
