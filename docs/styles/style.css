@@ -293,7 +293,7 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   grid-area: about;
   background-color: var(--light2-color);
   color: var(--dark2-color);
-  padding-top: 5%;
+  padding: 8%;
   display: grid;
   grid-template-columns: 50% 50%;
 }
@@ -303,12 +303,14 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   border-radius: 10%;
   border-color: var(--light3-color);
   border-style: double;
+  width: auto;
 }
 .about-img {
-  width: 70%;
+  width: 80%;
   display: block;
   justify-self: center;
   border-radius: 10%;
+  margin: 5%;
 }
 .about-text {
   margin-top: 0%;
@@ -316,11 +318,14 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
 }
 
 #about-left {
-  margin: 8% 8% 8% 16%;
+  margin-right: 8%;
 }
+
 #about-right {
-  margin: 8% 16% 8% 8%;
+  align-content: center; /* verticle alignment */
+  margin-left: 8%;
 }
+
 #about-middle {
   margin: 8%;
 }
@@ -336,15 +341,18 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   margin: 8% 8% 8% 16%;
 }
 
-#about3, #about3 > .about-text {
+#about3, #contact {
   grid-template-columns: 100%;
-  grid-template-rows: 80% 20%;
   background-color: var(--dark-primary-color);
   color: var(--light2-color);
   align-items: center;
   justify-content: center;
   text-align: center;
   display: grid;
+}
+#about3 > .about-text, #contact > .about-text{
+  color: var(--light2-color);
+  margin: 0%;
 }
 
 #about3 > .about-text > #contact-name {
@@ -368,7 +376,6 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   margin-top: 0%;
 }
 
-
 .contact-image{
   margin-top: 3%;
   border-radius: 50%;
@@ -378,6 +385,15 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   border-color: var(--light2-color);
 }
 
+#contact {
+  padding: 2%;
+}
+
+#featured-item-img {
+  width: 80%;
+  border-radius: 0%;
+  margin: 15%;
+}
 
 /* Formatering av färgade rutor för placering av text eller andra element */
 .colourbox{
