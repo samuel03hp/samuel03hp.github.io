@@ -95,53 +95,6 @@ a {
   text-decoration: none; /* Anger att länkars understreck inte ska visas */
   color: inherit; /* Inherit används för att ge förälderkalssens färg för att undvika blå/lila länkar */
 }
-/* Formgivning för formulär */
-form {
-  background-color: #B69F84;
-  width: 50%;
-  margin: 0 auto; /* Centrera formuläret */
-  border-radius: 20px; 
-  padding: 20px 0;
-}
-table {
-  width: 80%;
-  border-radius: 10px;
-  align-self: center;
-  border-collapse: collapse;
-  margin: 20px auto;
-}
-th, td {
-  text-align: left;
-  padding: 10px;
-  background-color: var(--light1-color);
-  border-bottom: 2px solid  rgb(167, 142, 115);
-}
-tr:first-child td:first-child {
-  border-top-left-radius: 10px;
-}
-tr:first-child td:last-child {
-  border-top-right-radius: 10px;
-}
-tr:first-child th:first-child {
-  border-top-left-radius: 10px;
-}
-tr:first-child th:last-child {
-  border-top-right-radius: 10px;
-}
-tr:last-child td:first-child {
-  border-bottom-left-radius: 10px;
-}
-tr:last-child td:last-child {
-  border-bottom-right-radius: 10px;
-}
-tr:last-child td{
-  border-bottom: none;
-}
-/* 
-Definierar rutnätsbehållare
-I detta fall är sidorna till mesta dels byggda med enbart en kolumn, vilket gör att rutnätet inte är helt nödvändigt, 
-men gör det enkelt att göra ändringar i layouten och finns kvar från delprov 1
-*/
 .grid-container {
   display: grid; /* Anger att detta element använder grid-layout */
   grid-template-areas: 'header' 'middle' 'about' 'portf' 'contact' 'footer'; /* Definierar områden i grid */
@@ -181,7 +134,7 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   color: var(--light2-color);
 }
 /* Formgivning för knappar */
-.button { 
+.button, .dropbtn { 
   background-color: transparent;
   font-family: 'Regular', sans-serif;
   font-size: 0.7em;
@@ -194,30 +147,11 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   cursor: pointer; /* Ändrar muspekaren till en pekare vid hovring */
   transition-duration: 0.3s; /* Anger längden på övergångseffekten */
   display: block; /* Anger att knappen ska visas som ett blockelement */
-}
-.button:visited{
-  background-color: var(--light1-color); /* Behåller vit bakgrundsfärg för besökta knappar */
 }
 .button:hover {
   background-color: var(--primary-color); /* Ändrar bakgrundsfärgen vid hovring */
   opacity: 1; /* Anger att knappens synlighet är 100% vid hovring */
 }
-
-.dropbtn {
-  background-color: transparent;
-  font-family: 'Regular', sans-serif;
-  font-size: 0.7em;
-  text-align: center; /* Anger att texten ska vara centrerad */
-  border: none; /* Anger att knappar inte ska ha någon kant */
-  width: 80px; /* Anger knappars bredd */
-  padding: 7px 0px; /* Anger avstånd inom knappen (första värdet gäller över och under, det andra gäller höger och vänster*/
-  margin: 10px 0px; /* Anger avständ från knappen till övriga element */
-  position: relative; /* Anger att knappen ska vara positionerad relativt sin normala position */
-  cursor: pointer; /* Ändrar muspekaren till en pekare vid hovring */
-  transition-duration: 0.3s; /* Anger längden på övergångseffekten */
-  display: block; /* Anger att knappen ska visas som ett blockelement */
-}
-
 .dropdown {
   position: relative;
   display: inline-block;
@@ -250,7 +184,6 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
 /* *******************************Formatering välkomstsektionen, med bild som bakgrund******************************* */
 .middle {
   grid-area: middle;
-  /* TO DO: Fix quality of image */
   background: url("../img/corks.jpg") no-repeat center center; /* Anger bakgrundsbild och dess position */
   background-size: cover; /* Skalar bakgrundsbilden så att den täcker hela området */
   text-align: center; /* Centrerar text horisontellt */
@@ -263,37 +196,17 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   padding: 3% 8% 3% 8%;
 }
 
-
 #intro{
   width: 50%;
   color: var(--light2-color);
 }
-/* Formatering av "Shop Now!"-knapp och "Contact"-knapp*/
-.shop-now{
-  background-color: rgba(182, 159, 132, 0.8);
-  border: solid;
-  border-color: var(--light1-color);
-  margin: auto;
-}
-.shop-now:visited{
-  background-color: rgba(182, 159, 132, 0.8);
-}
-.shop-now:hover{
-  background-color: rgb(167, 142, 115);
-}
-.contact-button {
-  background-color: rgba(182, 159, 132, 0.4);
-  margin: 0;
-}
-.contact-now:visited{
-  background-color: rgba(182, 159, 132, 0.4);
-}
+
 /* *******************************Formgivning av informationssektionen******************************* */
 .about {
   grid-area: about;
   background-color: var(--light2-color);
   color: var(--dark2-color);
-  padding-top: 5%;
+  padding: 8%;
   display: grid;
   grid-template-columns: 50% 50%;
 }
@@ -303,12 +216,14 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   border-radius: 10%;
   border-color: var(--light3-color);
   border-style: double;
+  width: auto;
 }
 .about-img {
-  width: 70%;
+  width: 80%;
   display: block;
   justify-self: center;
   border-radius: 10%;
+  margin: 5%;
 }
 .about-text {
   margin-top: 0%;
@@ -316,11 +231,14 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
 }
 
 #about-left {
-  margin: 8% 8% 8% 16%;
+  margin-right: 8%;
 }
+
 #about-right {
-  margin: 8% 16% 8% 8%;
+  align-content: center; /* verticle alignment */
+  margin-left: 8%;
 }
+
 #about-middle {
   margin: 8%;
 }
@@ -336,15 +254,18 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   margin: 8% 8% 8% 16%;
 }
 
-#about3, #about3 > .about-text {
+#about3, #contact {
   grid-template-columns: 100%;
-  grid-template-rows: 80% 20%;
   background-color: var(--dark-primary-color);
   color: var(--light2-color);
   align-items: center;
   justify-content: center;
   text-align: center;
   display: grid;
+}
+#about3 > .about-text, #contact > .about-text{
+  color: var(--light2-color);
+  margin: 0%;
 }
 
 #about3 > .about-text > #contact-name {
@@ -368,7 +289,6 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   margin-top: 0%;
 }
 
-
 .contact-image{
   margin-top: 3%;
   border-radius: 50%;
@@ -378,15 +298,16 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   border-color: var(--light2-color);
 }
 
-
-/* Formatering av färgade rutor för placering av text eller andra element */
-.colourbox{
-  background-color: #B69F84;
-  text-align: center;
-  padding: 15px;
-  width: 60%;
-  border-radius: 10px;
+#contact {
+  padding: 2%;
 }
+
+#featured-item-img {
+  width: 80%;
+  border-radius: 0%;
+  margin: 15%;
+}
+
 /* *******************************Formgivning av portfoliosektionen, där bilder senare placeras******************************* */
 .portfolio {
   grid-area: portf;
@@ -430,107 +351,368 @@ men gör det enkelt att göra ändringar i layouten och finns kvar från delprov
   width: 100%;
   border-radius: 10px;
 }
-/* Formgivning av överleffekt med informationstext, som blir synlig vid hovring */
-.overlay {
-  background: #B69F84;
-  position: absolute;
-  top: 0; /* Bestämmer toppositionen */
-  bottom: 2%; /* Justerar bottenpositionen för att matcha bildernas storleksförhållande*/
-  width: 100%;
-  border-radius: 10px;
-  opacity: 0;
-  transition: .5s ease;
+/* *******************************Formgivning av sidfot******************************* */
+.footer {
+  grid-area: footer;
+  align-items: left;
+  padding-left: 8%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-color: var(--light3-color);
+  display: grid;
+  grid-template-rows: [footer-top] 40% [footer-bottom] 60%;
+  grid-template-areas: 'footer-top' 'footer-bottom';
 }
-/* Formgivning av texten på överläggseffekten. Detta görs separat gör att låta texten ha opacitet 1, medan bakgrunden har opacitet 0.9 vid hovring */
-.text-overlay {
+
+.footer-top {
+  display: grid;
+  grid-area: 'footer-top';
+  grid-template-columns: [footer-basic] 40% [footer-nav] 30% [footer-contact] 30%;
+}
+
+.footer-bottom {
+  display: grid;
+  grid-area: 'footer-bottom';
+  justify-items: center;
+}
+
+.footer > .footer-top > .footer-basic > h1 {
+  margin-bottom: -2%;
+}
+
+.footer > .footer-top > .footer-basic > a {
+  margin-right: 1%;
+}
+
+.footer-nav > h2 {
+  margin-bottom: -0.2%;
+}
+/* Formgivning av logotypen i sidfoten */
+.footer-img{
+  width: 80%;
+  align-content: center;
+  justify-content: center;
+  margin: 0 ;
+}
+
+
+
+@media (max-width: 768px){
+  
+/* Formgivning för rubriker */
+h1, h2, h3, h4, h5 {
+  line-height: 150%; /* Anger avstånd mellan textrader */
+  font-family: "Head";
+}
+h1 {
+  font-size: 1.5em; /* Anger storleken på texten */
+}
+h2 {
+  font-size: 1.2em;
+}
+h3 {
+  font-size: 1em;
+}
+h4 {
+  font-size: 0.85em;
+}
+h5 {
+  font-size: 0.75em;
+}
+/* Formgivning av heroklassen, som alltså är speciell text */
+.hero{
+  font-family: "Hero-Head"; /* Anger font för klassen hero */
+  font-size: 64px;
+  line-height: 120%;
+}
+.hero p{
+  font-size: 40px;
+}
+/* Formgivning för horisontella linjer som används mellan sektioner på hemsidan */
+hr {
+  background-color: var(--light2-color);
+  border: none; /* Anger att linjen inte ska ha någon kant */
+  width: 92%;
+  height: 2px; /* Anger linjens höjd */
+  margin-top: 5%; /* Anger marginaler till ovanliggande objekt*/
+  margin-left: 0%;
+}
+/* Formgivning för onumrerad lista */
+ul {
+  list-style-type: none; /* Anger att listan inte ska vara en punktlista */
+  padding: 0; /* Säkerställer att ingen padding eller marginal används på onumrerade listor */
+  margin: 0;
+  color: var(--dark2-color);
+}
+/* Formgivning för länkar */
+a {
+  text-decoration: none; /* Anger att länkars understreck inte ska visas */
+  color: inherit; /* Inherit används för att ge förälderkalssens färg för att undvika blå/lila länkar */
+}
+.grid-container {
+  display: grid; /* Anger att detta element använder grid-layout */
+  grid-template-areas: 'header' 'middle' 'about' 'portf' 'contact' 'footer'; /* Definierar områden i grid */
+}
+/* *******************************Formatering av sidhuvud******************************* */
+.header {
+  grid-area: header; /* Anger att elementet befinner sig i header-området*/
+  display: grid;
+  grid-template-columns: [header-logo] 20% [nav] 80%;
+  grid-template-areas: 'header-logo name'
+                        'nav nav';
+  background-color: var(--dark1-color);
   color: var(--light1-color);
-  text-align: center;
+  align-items: center; /* Centrerar innehålet vertikalt */
+  justify-content: center; /* Centrerar innehålet horisontellt */
+  padding-left: 2%;
+  color: var(--light1-color);
+}
+.name > p {
+  font-size: 0.8em;
+  margin-top: -4%;
+  color: var(--light2-color);
+}
+.header-logo > a > img {
+  width: 100%;
+  display: flex;
+  padding: 10% 10% 10% 0%;
+}
+/* Formatering av navigationsmenyn i sidhuvudet */
+.nav {
+  justify-self: center; /* Justerar navigationen till höger */
+  margin-right: 10%; /* Anger höger marginal */
+  display: flex;
+  color: var(--light2-color);
+}
+/* Formgivning för knappar */
+.button, .dropbtn { 
+  background-color: transparent;
+  font-family: 'Regular', sans-serif;
+  font-size: 0.7em;
+  text-align: center; /* Anger att texten ska vara centrerad */
+  border: none; /* Anger att knappar inte ska ha någon kant */
+  width: 80px; /* Anger knappars bredd */
+  padding: 7px 0px; /* Anger avstånd inom knappen (första värdet gäller över och under, det andra gäller höger och vänster*/
+  margin: 10px 0px; /* Anger avständ från knappen till övriga element */
+  position: relative; /* Anger att knappen ska vara positionerad relativt sin normala position */
+  cursor: pointer; /* Ändrar muspekaren till en pekare vid hovring */
+  transition-duration: 0.3s; /* Anger längden på övergångseffekten */
+  display: block; /* Anger att knappen ska visas som ett blockelement */
+}
+.button:hover {
+  background-color: var(--primary-color); /* Ändrar bakgrundsfärgen vid hovring */
+  opacity: 1; /* Anger att knappens synlighet är 100% vid hovring */
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Denna rad och 3 över: centerar genom absolut position */
-  transition: .5s ease;
-  opacity: 0;
+  background-color: var(--light1-color);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  margin-top: -10px;
 }
-/* Visa överläggen vid hovring */
-.image-box:hover .overlay {
-  opacity: 0.9;
+
+.dropdown-content a {
+  color: var(--dark1-color);
+  padding: 7px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.7em;
 }
-.image-box:hover .text-overlay {
-  opacity: 1;
+
+.dropdown-content a:hover {background-color: var(--light2-color);}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: var(--primary-color)}
+
+/* *******************************Formatering välkomstsektionen, med bild som bakgrund******************************* */
+.middle {
+  grid-area: middle;
+  background: url("../img/corks.jpg") no-repeat center center; /* Anger bakgrundsbild och dess position */
+  background-size: cover; /* Skalar bakgrundsbilden så att den täcker hela området */
+  text-align: center; /* Centrerar text horisontellt */
 }
-.product-table{
-  width: 90%;
+/* Formatering av överlägg på välkomstsektionen, som gör bilden delvis obskyrd och adderar text */
+.middle .overlay1 {
+  background: rgba(71, 107, 97, 0.7); /* Använder rgba för semi-transparent bakgrund */
+  color: var(--light1-color);
+  text-align: left;
+  padding: 3% 8% 3% 8%;
 }
-/* *******************************Formgivning av kontaktsektionen******************************* */
-.contact {
-  grid-area: contact;
-  text-align: center;
+
+#intro{
+  width: 100%;
+  color: var(--light2-color);
+}
+
+/* *******************************Formgivning av informationssektionen******************************* */
+/* TODO: Rename sections in "about" to first, second instead of left, right */
+
+.about {
+  grid-area: about;
+  background-color: var(--light2-color);
+  color: var(--dark2-color);
+  padding: 8%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-areas:  'first'
+                        'second';
+}
+.about-img-frame {
+  grid-area: second;
+  background-color: var(--light1-color);
+  align-content: center;
+  border-radius: 10%;
+  border-color: var(--light3-color);
+  border-style: double;
+  width: auto;
+}
+.about-img {
+  width: 50%;
+  display: block;
+  justify-self: center;
+  border-radius: 10%;
+  margin: 5%;
+}
+.about-text {
+  grid-area: first;
+  margin-top: 0%;
+  color: var(--dark2-color);
+}
+/* 
+#about-left {
+  margin-right: 8%;
+} */
+
+#about-right {
+  align-content: center; 
+  margin-left: 0%;
+}
+
+#about-middle {
+  margin: 8%;
+}
+
+#about2, #about2 > .about-text {
+  background-color: var(--dark-primary-color);
+  color: var(--light2-color);
+}
+#about2 > .about-img-frame {
+  margin: 8% 16% 8% 8%;
+}
+#about2 > .about-text {
+  margin: 8% 8% 8% 16%;
+}
+
+#about3, #contact {
+  grid-template-columns: 100%;
+  background-color: var(--dark-primary-color);
+  color: var(--light2-color);
   align-items: center;
-  padding: 10px;
+  justify-content: center;
+  text-align: center;
   display: grid;
 }
-/* Formgivning av de ikoner som visas i formuläret, samt sör sociala medier */
-.icon {
-  height: 34px;
+#about3 > .about-text, #contact > .about-text{
+  color: var(--light2-color);
+  margin: 0%;
 }
-/* Formgivning av formulärets inputområden */
-input[type=text], textarea {
-  background-color: var(--light1-color);
-  font-family: 'Regular', sans-serif;
-  font-size: 16px;
-  width: 70%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+
+#about3 > .about-text > #contact-name {
+  margin-top: -4%;
+  margin-bottom: -2%;
 }
-textarea {
-  height: 200px;
+
+.icons {
+  display: grid;
+  /* grid-template-columns: [media-icon] 25% [media-icon] 25% [media-icon] 25% [media-icon] 25%; */
+  grid-template-columns: 100%;
+  grid-template-areas: 'media-icon'
+                        'media-icon'
+                        'media-icon'
+                        'media-icon';
+  justify-self: center;
+  width: 80%;
+  color: var(--light2-color);
 }
-/* Formgivning av inlämningsknappen. Denna är separat från övriga knappar, eftersom den anges som input istället för knapp */
-input[type=submit] {
-  background-color: #82ac5d; 
-  font-family: 'Regular', sans-serif;
-  font-size: 18px;
-  width: 50%;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: solid;
-  border-width: 3px;
-  border-radius: 20px;
-  border-color: var(--light1-color);
-  cursor: pointer;
+
+.media-icon {
+  justify-self: center;
+  display: block;
 }
-/* Formattering av vanlig knapp som används istället för submit-knapp i 
-contact.html, för att kunna simulera funktion */
-.submit-button {
-  background-color: #82ac5d; 
-  width: 50%;
-  padding: 14px 20px;
-  border: solid;
-  border-width: 3px;
-  border-color: var(--light1-color);
-  margin: 0 auto;
+.media-icon > p {
+  margin-top: 0%;
 }
-/* Ändrar bakgrundsfärgen på inlämningsknappen vid hovring */
-input[type=submit]:hover {
-  background-color: #45a049;
+
+.contact-image{
+  margin-top: 3%;
+  border-radius: 50%;
+  width: 40%;
+  border-style: solid;
+  border-width: 8px;
+  border-color: var(--light2-color);
 }
-.submit-button:visited{
-  background-color: #82ac5d; 
+
+#contact {
+  padding: 2%;
 }
-.submit-button:hover {
-  background-color: #45a049;
+
+#featured-item-img {
+  width: 80%;
+  border-radius: 0%;
+  margin: 15%;
 }
-/* Formatering av rutan som innehåller kundkorgen */
-#cart {
-  align-self: center;
+
+/* *******************************Formgivning av portfoliosektionen, där bilder senare placeras******************************* */
+.portfolio {
+  grid-area: portf;
+  background-color: var(--dark1-color);
+  color: var(--light1-color);
+}
+.portfolio-text {
+  padding: 8%; /* Anger samma padding som i informationssektionen */
+  color: var(--light1-color);
+}
+/* Formatering av rutnät för produktlistning */
+.listings {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 5%;
   align-items: center;
-  margin: 20px auto;
+  padding-bottom: 8%;
 }
-/* Formattering av rutan formuläret för kontaktinformation och betalning i checkout.html */
-#info {
-  width: 60%;
+/* Formatering för listade produkter */
+.listed-item{
+  background-color: var(--dark2-color);
+  border-radius: 10px;
+  border-style: double;
+  border-color: var(--dark3-color);
+  padding: 10%;
+  justify-items: center;
+  text-align: center;
+}
+.listed-item > h1 {
+  font-size: 1.3em;
+}
+.listed-item > p {
+  color: var(--light2-color);
+}
+/* Formgivning av bildernas sektioner i portfolion */
+.image-box {
+  position: relative; /* Anger att elementet ska vara positionerat relativt sin normala position */
+  width: 100%;
+}
+/* Formgivning av bilder */
+.image {
+  width: 70%;
+  border-radius: 10px;
 }
 /* *******************************Formgivning av sidfot******************************* */
 .footer {
@@ -568,126 +750,11 @@ input[type=submit]:hover {
 .footer-nav > h2 {
   margin-bottom: -0.2%;
 }
-
-
-
 /* Formgivning av logotypen i sidfoten */
 .footer-img{
-  /* position: relative; */
   width: 80%;
   align-content: center;
   justify-content: center;
   margin: 0 ;
-  /* display: block; */
 }
-/* Responsiv layout. Byter till följande då skärmen har en bredd på 600px eller mindre */
-@media (max-width: 600px) {
-  /* Ändrar knappars bredd och fontstorlek */
-  .button {
-      width: 120px;
-      font-size: 16px;
- }
- /* 
- Ändrar hovringsinställningar till grundinställningarna eftersom hovring inte kan ske på pekskärmar.
- Utan denna ändring skulle knapparna istället byta färg då man klickar på knapparna
- */
-  .button:hover {
-      background: var(--light1-color);
-      color: black;
-      opacity: 0.8;
-  }
- /* Ändrar rubrikers fontstorlek och radavstånd */
-  h1, h2, h3, h4, h5 {
-      line-height: 150%;
- }
-  h1 {
-      font-size: 1.5em;
- }
-  h2 {
-      font-size: 1.2em;
- }
-  h3 {
-      font-size: 1em;
- }
-  h4 {
-      font-size: 0.85em;
- }
-  h5 {
-      font-size: 0.80em;
- }
- /* Ändrar herotextens fontstorlek och radavstånd för paragraferna */
-  .hero{
-      font-size: 2em;
- }
-  .hero p{
-      font-size: 1em;
-      line-height: 110%;
- }
-  form {
-      width: 90%;
-      margin-left: 5%;
- }
- /* Ändrar formatering av tabeller */
- table {
-  font-size: 10px; /* Mindre textstorlek krävs för att texten ska få plats i tabellens område*/
-  width: 100%;
-  position: relative;
- }
- /* Ändrar layouten i headern. Den delas in i två områden istället för tre, eftersom området är smalare */
-  .header {
-      display: grid;
-      grid-template-rows: [all] 65vw;
-      grid-template-columns:[logo] 50% [nav] 50%;
-      grid-template-areas: 'logo nav';
-      padding: 5% 0;
- }
- /* Ändrar logotypens storlek och marginaler */
-  .logo {
-      grid-column: logo;
-      width: 115%;
-      margin-left: 20%;
- }
- /* Change the padding in the about section */
-  .about, .portfolio-text, .contact {
-      padding-left: 5%;
-      padding-right: 5%;
- }
- /* Ändrar formatering av ruta med listningsobjekt för att visa dem under varandra */
- .listings {
-      display: grid;
-      grid-template-columns: 100%; /* Enbart en kolumn på små skärmar */
-      padding: 2%;
-      gap: 0;
- }
- .listed-item{
-  margin-top: 0;
-}
- /* Ändrar storlek på bildernas sektioner i portfolion */
-  .image-box {
-      width: 100%;
- }
- .text-overlay {
-      font-size: 0.80em;
- }
- /* Ändrar storlek på textarea i formuläret */
-  input[type=text], textarea {
-      width: 90%;
- }
- /* Ändrar hovringsinställningen till grundinställningar för att undvika ändring vid klick */
-  input[type=submit]:hover {
-      background-color: #8FB46F;
- }
- /* Ändrar ruta med kundkorg och ruta med kontaktinformation */
- #cart {
-  margin: 5px auto;
-  width: 95%;
- }
- #info {
-  margin: 5px auto;
-  width: 95%;
- }
- /* Ändrar storlek på logotypen i sidfoten */
-  .footer-img{
-      width: 60%;
- }
 }
