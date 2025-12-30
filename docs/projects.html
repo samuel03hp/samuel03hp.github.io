@@ -11,6 +11,7 @@
       <!-- Länk till externt stylesheet -->
       <link rel="stylesheet" type="text/css" href="../styles/style.css">
 </head>
+   
    <body>
       <div class="grid-container">
         <header id="header" class="header">
@@ -69,42 +70,75 @@
                <div class="portfolio-text">
                   <h1>Projects</h1>
                   <div class="listings">
+
                      <div class="listed-item">
-                        <picture class="img-box">
-                           <img src="img/coming_soon.png" class="image" alt="Text stating that this project will be available soon">
-                        </picture>
-                        <!--
+
+                        <div class="slide fade">
+                           <div class="image-box">
+                              <img src="img/cake2025.jpg" class="image" alt="Image of a cake decorated with raspberries, lemon and chocolate.">
+                           </div>
+                           <h1 class="caption-header">
+                              Lemon and Raspberry Cake
+                           </h1>
+                           <p class="caption-text">
+                              The cake I baked for my 22nd birthday
+                           </p>
+                        </div>
+
+                        <div class="slide fade">
+                           <div class="image-box">
+                              <img src="img/strawberry_cake.jpg" class="image" alt="Image of a cake decorated with raspberries, lemon and chocolate.">
+                           </div>
+                           <h1 class="caption-header">
+                              Strawberry Cake
+                           </h1>
+                           <p class="caption-text">
+                              A cake I baked for my 17th birthday
+                           </p>
+                        </div>
+                        
+                        <div class="slide fade">
+                           <div class="image-box">
+                              <img src="img/raspberry_choc_cake.jpg" class="image" alt="Image of a cake decorated with raspberries, lemon and chocolate.">
+                           </div>
+                           <h1 class="caption-header">
+                              Chocolate and Raspberry Cake
+                           </h1>
+                           <p class="caption-text">
+                              A cake I baked for my 17th birthday
+                           </p>
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1)">❮</a>
+                        <a class="next" onclick="plusSlides(1)">❯</a>
+                        <div style="text-align:center">
+                           <span class="dot" onclick="currentSlide(1)"></span> 
+                           <span class="dot" onclick="currentSlide(2)"></span> 
+                           <span class="dot" onclick="currentSlide(3)"></span> 
+                        </div>
+                     </div>
+
+                     <div class="listed-item">
+                        <div class="image-box">
+                           <img src="img/rose_candles.jpg" class="image" alt="Text stating that this project will be available soon">
+                        </div>
+                        <h1 class="caption-header">
+                           Rose Candles
+                        </h1>
+                        <p class="caption-text">
+                           Two candles that I made as a christmas gift for my mother
+                        </p>
+                     </div>
+
+                     <div class="listed-item">
+                        <img src="img/rail_trolly_done.jpg" class="image" alt="Text stating that this project will be available soon">
                         <h1>
-                           Project title
+                           Rail trolly
                         </h1>
                         <p>
-                           Project description
-                        </p> -->
+                           A miniature rail trolly made to anounce that we were taking my aunt try rail trollies for her 40th birthday
+                        </p>
                      </div>
-                     <div class="listed-item">
-                        <picture class="img-box">
-                           <img src="img/coming_soon.png" class="image" alt="Text stating that this project will be available soon">
-                        </picture>
-                        <!--
-                        <h1>
-                           Project title
-                        </h1>
-                        <p>
-                           Project description
-                        </p> -->
-                     </div>
-                     <div class="listed-item">
-                        <picture class="img-box">
-                           <img src="img/coming_soon.png" class="image" alt="Text stating that this project will be available soon">
-                        </picture>
-                        <!--
-                        <h1>
-                           Project title
-                        </h1>
-                        <p>
-                           Project description
-                        </p> -->
-                     </div>
+
                   </div>
                </div>
             </section>
@@ -174,5 +208,33 @@
 
          </footer>
       </div>
+      <script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("slide");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
    </body>
 </html>

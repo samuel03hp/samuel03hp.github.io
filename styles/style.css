@@ -318,12 +318,14 @@ a {
   padding: 8%; /* Anger samma padding som i informationssektionen */
   color: var(--light1-color);
 }
+.slide {
+  display: none;
+}
 /* Formatering av rutnät för produktlistning */
 .listings {
   display: grid;
   grid-template-columns: 29% 29% 29%;
   gap: 5%;
-  align-items: center;
 }
 /* Formatering för listade produkter */
 .listed-item{
@@ -334,23 +336,83 @@ a {
   padding: 10%;
   justify-items: center;
   text-align: center;
+  position: relative;
 }
-.listed-item > h1 {
+
+.caption-header {
   font-size: 1.3em;
 }
-.listed-item > p {
+.caption-text {
   color: var(--light2-color);
 }
 /* Formgivning av bildernas sektioner i portfolion */
 .image-box {
   position: relative; /* Anger att elementet ska vara positionerat relativt sin normala position */
   width: 100%;
+  min-height: 440px;
+  align-content: center;
 }
 /* Formgivning av bilder */
 .image {
   width: 100%;
   border-radius: 10px;
 }
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev {
+  left: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
 /* *******************************Formgivning av sidfot******************************* */
 .footer {
   grid-area: footer;
