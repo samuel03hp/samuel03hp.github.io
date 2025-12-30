@@ -318,7 +318,7 @@ a {
   padding: 8%; /* Anger samma padding som i informationssektionen */
   color: var(--light1-color);
 }
-.slide {
+.slide1, .slide2 {
   display: none;
 }
 /* Formatering av rutnät för produktlistning */
