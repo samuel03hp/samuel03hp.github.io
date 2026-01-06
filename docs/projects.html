@@ -87,7 +87,7 @@
 
                         <div class="slide1 fade">
                            <div class="image-box">
-                              <img src="img/strawberry_cake.jpg" class="image" alt="Image of a cake decorated with raspberries, lemon and chocolate.">
+                              <img src="img/strawberry_cake.jpg" class="image" alt="Image of a cake decorated with strawberries, cream and chocolate.">
                            </div>
                            <h1 class="caption-header">
                               Strawberry Cake
@@ -99,7 +99,7 @@
 
                         <div class="slide1 fade">
                            <div class="image-box">
-                              <img src="img/raspberry_choc_cake.jpg" class="image" alt="Image of a cake decorated with raspberries, lemon and chocolate.">
+                              <img src="img/raspberry_choc_cake.jpg" class="image" alt="Image of a cake decorated with raspberries and chocolate.">
                            </div>
                            <h1 class="caption-header">
                               Chocolate and Raspberry Cake
@@ -114,7 +114,7 @@
 
                      <div class="listed-item">
                         <div class="image-box">
-                           <img src="img/rose_candles.jpg" class="image" alt="Text stating that this project will be available soon">
+                           <img src="img/rose_candles.jpg" class="image" alt="Image of two candles in the shape of roses">
                         </div>
                         <h1 class="caption-header">
                            Rose Candles
@@ -129,7 +129,7 @@
 
                         <div class="slide2 fade">
                            <div class="image-box">
-                              <img src="img/rail_trolly_done.jpg" class="image" alt="Text stating that this project will be available soon">
+                              <img src="img/rail_trolly_done.jpg" class="image" alt="Image of a red cardboard rail trolly">
                            </div>
                            <h1 class="caption-header">
                               Rail trolly
@@ -141,7 +141,7 @@
 
                         <div class="slide2 fade">
                            <div class="image-box">
-                              <img src="img/rail_trolly_pieces.jpg" class="image" alt="Image of a cake decorated with raspberries, lemon and chocolate.">
+                              <img src="img/rail_trolly_pieces.jpg" class="image" alt="Image of cardboard pices">
                            </div>
                            <h1 class="caption-header">
                               Rail trolly pieces
@@ -153,7 +153,7 @@
 
                         <div class="slide2 fade">
                            <div class="image-box">
-                              <img src="img/rail_trolly_not_painted.jpg" class="image" alt="Image of a cake decorated with raspberries, lemon and chocolate.">
+                              <img src="img/rail_trolly_not_painted.jpg" class="image" alt="Image of cardboard rail trolly before if has been painted">
                            </div>
                            <h1 class="caption-header">
                               Rail trolly before paint
@@ -165,7 +165,7 @@
 
                         <div class="slide2 fade">
                            <div class="image-box">
-                              <img src="img/rail_trolly_white_basket.jpg" class="image" alt="Image of a cake decorated with raspberries, lemon and chocolate.">
+                              <img src="img/rail_trolly_white_basket.jpg" class="image" alt="Image of rail trolly and crochet basket before they have been painted">
                            </div>
                            <h1 class="caption-header">
                               Rail trolly and basket
@@ -262,14 +262,12 @@ function plusSlides(n, no) {
 function showSlides(n, no) {
   let i;
   let x = document.getElementsByClassName(slideId[no]);
-  let dots = document.getElementsByClassName("dot");
   if (n > x.length) {slideIndex[no] = 1}    
   if (n < 1) {slideIndex[no] = x.length}
   for (i = 0; i < x.length; i++) {
      x[i].style.display = "none";  
   }
   x[slideIndex[no]-1].style.display = "block"; 
-  dots[slideIndex[no]-1].className += "active";
 }
 
 </script>
