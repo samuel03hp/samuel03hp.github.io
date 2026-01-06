@@ -39,7 +39,7 @@ permalink: "projects.html"
 
                      <div class="listed-item">
 
-                        <div class="slide fade">
+                        <div class="slide1 fade">
                            <div class="image-box">
                               <img src="img/cake2025.jpg" class="image" alt="Image of a cake decorated with raspberries, lemon and chocolate.">
                            </div>
@@ -51,9 +51,9 @@ permalink: "projects.html"
                            </p>
                         </div>
 
-                        <div class="slide fade">
+                        <div class="slide1 fade">
                            <div class="image-box">
-                              <img src="img/strawberry_cake.jpg" class="image" alt="Image of a cake decorated with raspberries, lemon and chocolate.">
+                              <img src="img/strawberry_cake.jpg" class="image" alt="Image of a cake decorated with strawberries, cream and chocolate.">
                            </div>
                            <h1 class="caption-header">
                               Strawberry Cake
@@ -62,10 +62,10 @@ permalink: "projects.html"
                               A cake I baked for my 17th birthday
                            </p>
                         </div>
-                        
-                        <div class="slide fade">
+
+                        <div class="slide1 fade">
                            <div class="image-box">
-                              <img src="img/raspberry_choc_cake.jpg" class="image" alt="Image of a cake decorated with raspberries, lemon and chocolate.">
+                              <img src="img/raspberry_choc_cake.jpg" class="image" alt="Image of a cake decorated with raspberries and chocolate.">
                            </div>
                            <h1 class="caption-header">
                               Chocolate and Raspberry Cake
@@ -74,18 +74,13 @@ permalink: "projects.html"
                               A cake I baked for my 17th birthday
                            </p>
                         </div>
-                        <a class="prev" onclick="plusSlides(-1)">❮</a>
-                        <a class="next" onclick="plusSlides(1)">❯</a>
-                        <div style="text-align:center">
-                           <span class="dot" onclick="currentSlide(1)"></span> 
-                           <span class="dot" onclick="currentSlide(2)"></span> 
-                           <span class="dot" onclick="currentSlide(3)"></span> 
-                        </div>
+                        <a class="prev" onclick="plusSlides(-1, 0)">❮</a>
+                        <a class="next" onclick="plusSlides(1, 0)">❯</a>
                      </div>
 
                      <div class="listed-item">
                         <div class="image-box">
-                           <img src="img/rose_candles.jpg" class="image" alt="Text stating that this project will be available soon">
+                           <img src="img/rose_candles.jpg" class="image" alt="Image of two candles in the shape of roses">
                         </div>
                         <h1 class="caption-header">
                            Rose Candles
@@ -95,14 +90,59 @@ permalink: "projects.html"
                         </p>
                      </div>
 
+
                      <div class="listed-item">
-                        <img src="img/rail_trolly_done.jpg" class="image" alt="Text stating that this project will be available soon">
-                        <h1>
-                           Rail trolly
-                        </h1>
-                        <p>
-                           A miniature rail trolly made to anounce that we were taking my aunt try rail trollies for her 40th birthday
-                        </p>
+
+                        <div class="slide2 fade">
+                           <div class="image-box">
+                              <img src="img/rail_trolly_done.jpg" class="image" alt="Image of a red cardboard rail trolly">
+                           </div>
+                           <h1 class="caption-header">
+                              Rail trolly
+                           </h1>
+                           <p class="caption-text">
+                              A miniature rail trolly made to anounce that we were taking my aunt try rail trollies for her 40th birthday
+                           </p>
+                        </div>
+
+                        <div class="slide2 fade">
+                           <div class="image-box">
+                              <img src="img/rail_trolly_pieces.jpg" class="image" alt="Image of cardboard pices">
+                           </div>
+                           <h1 class="caption-header">
+                              Rail trolly pieces
+                           </h1>
+                           <p class="caption-text">
+                              I drew a schematic on my phone and then cut out pieces of cardboard to piece together the trolly
+                           </p>
+                        </div>
+
+                        <div class="slide2 fade">
+                           <div class="image-box">
+                              <img src="img/rail_trolly_not_painted.jpg" class="image" alt="Image of cardboard rail trolly before if has been painted">
+                           </div>
+                           <h1 class="caption-header">
+                              Rail trolly before paint
+                           </h1>
+                           <p class="caption-text">
+                              I glued the pieces toghether with melt glue and used wheels from an old toy car
+                           </p>
+                        </div>
+
+                        <div class="slide2 fade">
+                           <div class="image-box">
+                              <img src="img/rail_trolly_white_basket.jpg" class="image" alt="Image of rail trolly and crochet basket before they have been painted">
+                           </div>
+                           <h1 class="caption-header">
+                              Rail trolly and basket
+                           </h1>
+                           <p class="caption-text">
+                              I crochet a little basket using embroidery thread that I later painted and filled with a piece of bread made from clay
+                           </p>
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1, 1)">❮</a>
+                        <a class="next" onclick="plusSlides(1, 1)">❯</a>
                      </div>
 
                   </div>
@@ -111,33 +151,28 @@ permalink: "projects.html"
          </main>
         {% include "footer.njk" %}
       </div>
-      <script>
-let slideIndex = 1;
-showSlides(slideIndex);
+<script>
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+let slideIndex = [1,1];
+let slideId = ["slide1", "slide2"];
+showSlides(1, 0);
+showSlides(1, 1);
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
 }
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
+function showSlides(n, no) {
   let i;
-  let slides = document.getElementsByClassName("slide");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
+  let x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}    
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
+  x[slideIndex[no]-1].style.display = "block"; 
 }
+
 </script>
    </body>
 </html>
